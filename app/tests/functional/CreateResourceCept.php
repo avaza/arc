@@ -1,0 +1,20 @@
+<?php 
+$I = new FunctionalTester($scenario);
+$I->am('manager');
+$I->wantTo('create a resource');
+$I->amOnPage('/resources');
+$I->click('Add Resource');
+$I->seeCurrentUrlEquals('/resources/create');
+$I->fillField('id_number', 8888);
+$I->fillField('extension_num', 5041);
+$I->fillField('extension_pin', 1405);
+$I->fillField('primary_phone', 6154385395);
+$I->fillField('secondary_phone', 6152123034);
+$I->dontSeeCheckboxIsChecked('active');
+$I->checkOption('#active');
+$I->dontSeeElement('invitation_email');
+$I->checkOption('send_invitation');
+$I->see('Send Email To:');
+$I->fillField('invitation_email', 'j.murray@avaza.co');
+$I->click('Add Resource');
+$I->seeRecord('resources', ['id_number' => 8888]);

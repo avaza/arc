@@ -6,7 +6,10 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*",
-        "laracasts/commander": "~1.0"
+        "laracasts/commander": "~1.0",
+		"laracasts/validation": "1.1.*",
+        "fzaninotto/faker": "v1.3.0",
+        "toddish/verify": "3.*"
 	},
     "require-dev": {
         "way/generators": "~2.0",
@@ -19,9 +22,11 @@
 			"app/controllers",
 			"app/models",
 			"app/database/migrations",
-			"app/database/seeds",
-			"app/tests/TestCase.php"
-		]
+			"app/database/seeds"
+		],
+        "psr-4": {
+            "Arc\\": "app/Arc"
+        }
 	},
 	"scripts": {
 		"post-install-cmd": [

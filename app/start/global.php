@@ -51,6 +51,36 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+App::error(function(Laracasts\Validation\FormValidationException $exception, $code)
+{
+    return Redirect::back()->withInput()->withErrors($exception->getErrors());
+});
+
+App::error(function(Toddish\Verify\UserNotFoundException $exception, $code)
+{
+    return Redirect::back()->withInput()->withErrors($exception->getMessage());
+});
+
+App::error(function(Toddish\Verify\UserUnverifiedException $exception, $code)
+{
+    return Redirect::back()->withInput()->withErrors($exception->getMessage());
+});
+
+App::error(function(Toddish\Verify\UserDisabledException $exception, $code)
+{
+    return Redirect::back()->withInput()->withErrors($exception->getMessage());
+});
+
+App::error(function(Toddish\Verify\UserDeletedException $exception, $code)
+{
+    return Redirect::back()->withInput()->withErrors($exception->getMessage());
+});
+
+App::error(function(Toddish\Verify\UserPasswordIncorrectException $exception, $code)
+{
+    return Redirect::back()->withInput()->withErrors($exception->getMessage());
+});
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler
@@ -79,3 +109,4 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+require app_path().'/macros.php';

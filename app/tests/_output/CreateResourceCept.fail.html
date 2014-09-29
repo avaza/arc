@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ARC System</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+   <!-- Brand and toggle get grouped for better mobile display -->
+       <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" href="#">ARC System</a>
+       </div>
+
+       <!-- Collect the nav links, forms, and other content for toggling -->
+       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <ul class="nav navbar-nav">
+           <li class="active"><a href="#">Link</a></li>
+           <li><a href="#">Link</a></li>
+           <li class="dropdown">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+             <ul class="dropdown-menu" role="menu">
+               <li><a href="#">Action</a></li>
+               <li><a href="#">Another action</a></li>
+               <li><a href="#">Something else here</a></li>
+               <li class="divider"></li>
+               <li><a href="#">Separated link</a></li>
+               <li class="divider"></li>
+               <li><a href="#">One more separated link</a></li>
+             </ul>
+           </li>
+         </ul>
+         <form class="navbar-form navbar-left" role="search">
+           <div class="form-group">
+             <input type="text" class="form-control" placeholder="Search">
+           </div>
+           <button type="submit" class="btn btn-default">Submit</button>
+         </form>
+         <ul class="nav navbar-nav navbar-right">
+           <li><a href="#">Link</a></li>
+           <li class="dropdown">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+             <ul class="dropdown-menu" role="menu">
+               <li><a href="/clients">Clients</a></li>
+               <li><a href="/resources">Resources</a></li>
+               <li><a href="/contracts">Contracts</a></li>
+               <li><a href="/agencies">Agencies</a></li>
+               <li><a href="/divisions">Divisions</a></li>
+               <li><a href="/languages">Languages</a></li>
+               <li><a href="/users">Users</a></li>
+             </ul>
+           </li>
+         </ul>
+       </div><!-- /.navbar-collapse -->
+  </div>
+</nav>
+    <div class="container">
+            <form method="POST" action="http://localhost/resources" accept-charset="UTF-8"><input name="_token" type="hidden">
+    
+    <!-- ID Number Form Input -->
+    <div class="form-group">
+        <label for="id_number">ID Number:</label>
+        <input class="form-control" name="id_number" type="text" id="id_number">
+    </div>
+    
+    <!-- Extension Form Input -->
+    <div class="form-group">
+        <label for="extension_num">Extension:</label>
+        <input class="form-control" name="extension_num" type="text" id="extension_num">
+    </div>
+
+    <!-- Pin Number Form Input -->
+    <div class="form-group">
+        <label for="extension_pin">Pin Number:</label>
+        <input class="form-control" name="extension_pin" type="text" id="extension_pin">
+    </div>
+
+    <!-- Primary Phone Form Input -->
+    <div class="form-group">
+        <label for="primary_phone">Primary Phone:</label>
+        <input class="form-control" name="primary_phone" type="text" id="primary_phone">
+    </div>
+
+    <!-- Secondary Phone Form Input -->
+    <div class="form-group">
+        <label for="secondary_phone">Secondary Phone:</label>
+        <input class="form-control" name="secondary_phone" type="text" id="secondary_phone">
+    </div>
+
+    <!-- Active Checkbox Form Input -->
+    <div class="form-group">
+        <label for="active">Active:</label>
+        <input name="active" type="hidden" value="0" id="active"><input name="active" type="checkbox" value="0" id="active">
+    </div>
+
+    <!-- Send Email Toggle Form Input -->
+    <style type="text/css">
+        input[type=checkbox] ~ div {
+            display: none;
+        }
+        input[type=checkbox]:checked ~ div {
+            display: block;
+        }
+    </style>
+    <div class="form-group">
+        <label for="send_invitation">Send Invitation Email:</label>
+        <input name="send_invitation" type="hidden" value="0" id="send_invitation"><input name="send_invitation" type="checkbox" value="0" id="send_invitation">
+        <div class="form-group">
+            <label for="invitation_email">Send Email To:</label>
+            <input class="form-control" name="invitation_email" type="text" id="invitation_email">
+        </div>
+    </div>
+
+    <!-- Submit Input -->
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit" value="Add Resource">
+        </div>
+
+
+    </form>
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
