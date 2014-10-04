@@ -10,7 +10,7 @@ return [
     // DB prefix for tables
     'prefix' => '',
 
-    // Define Models if you extend them.
+    // Define Models.
     'models' => [
         'user' => 'User',
         'role' => 'Toddish\Verify\Models\Role',

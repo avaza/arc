@@ -31,8 +31,9 @@ Route::post('register',[
     'uses' => 'RegistrationController@store'
 ]);
 
-Route::group(array('before' => 'auth'), function()
-{
+
+/*Route::group(array('before' => 'auth'), function()
+{*/
     Route::get('invitations/create/{for?}', 'InvitationsController@create');
     Route::resource('invitations', 'InvitationsController', ['only' => ['store']]);
     Route::resource('users', 'UsersController');
@@ -43,9 +44,4 @@ Route::group(array('before' => 'auth'), function()
     Route::resource('agencies', 'AgenciesController');
     Route::resource('contracts', 'ContractsController');
     Route::resource('languages', 'LanguagesController');
-});
-
-Route::get('language_json', function(){
-    $codes = DB::select(DB::raw("SELECT DISTINCT `code` FROM `langraw`"));
-    dd($codes);
-});
+//});

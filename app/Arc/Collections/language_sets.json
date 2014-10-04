@@ -1,0 +1,37 @@
+{
+  "1": {
+    "spa": "Spanish"
+  },
+  "2": {
+    "amh": "Amharic",
+    "arb": "Arabic",
+    "bos": "Bosnian",
+    "din": "Dinka",
+    "prs": "Farsi",
+    "fra": "French",
+    "hin": "Hindi",
+    "kmh": "Khmer",
+    "kur": "Kurdish",
+    "lao": "Lao",
+    "som": "Somali",
+    "vie": "Vietnamese"
+  },
+  "3": {
+    "sqi": "Albanian",
+    "zho": "Chinese",
+    "hrv": "Croatian",
+    "deu": "German",
+    "ita": "Italian",
+    "jpn": "Japanese",
+    "kor": "Korean",
+    "orm": "Oromo",
+    "nus": "Nuer",
+    "por": "Portuguese",
+    "rus": "Russian",
+    "slv": "Slovene",
+    "tha": "Thai",
+    "tur": "Turkish",
+    "urd": "Urdu"
+  }
+  "4":["All Other Languages"]
+}

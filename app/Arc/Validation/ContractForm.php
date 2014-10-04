@@ -49,20 +49,9 @@ class ContractForm extends FormValidator{
         'ah_end',
         'ah_weekends',
         'otp_user',
-        'otp_ahup',
-        'otp_cout',
         'ons_user',
-        'ons_ahup',
-        'ons_rush',
-        'ons_cncl',
         'vri_user',
-        'vri_ahup',
-        'vri_odup',
-        'vri_cncl',
-        'tsl_user',
-        'tsl_rush',
-        'tsl_form',
-        'tsl_cncl'
+        'tsl_user'
     ];
 
     /**
@@ -72,19 +61,10 @@ class ContractForm extends FormValidator{
     public $defaults = [
         'ah_start' =>'20:00:00',
         'ah_end' => '08:00:00',
-        'otp_ahup' => 0.20,
-        'otp_cout' => 0.50,
+        'otp_user' => 1,
         'ons_user' => 0,
-        'ons_ahup' => 20,
-        'ons_rush' => 20,
-        'ons_cncl' => 20,
-        'vri_ahup' => 0.50,
-        'vri_odup' => 0.25,
-        'vri_cncl' => 5.00,
-        'tsl_user' => 0,
-        'tsl_rush' => 50,
-        'tsl_form' => 25,
-        'tsl_cncl' => 25
+        'vri_user' => 0,
+        'tsl_user' => 0
     ];
 
     /**

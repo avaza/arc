@@ -1,6 +1,8 @@
-<?php
+<?php namespace Arc\Agencies;
 
-class Agency extends \Eloquent {
+use Eloquent;
+
+class Agency extends Eloquent {
 	protected $fillable = [];
 
     public function client()

@@ -10,28 +10,12 @@
             </tr>
         </thead>
         <tbody>
+            @foreach($client->attributes as $field => $value)
             <tr>
-                <td>First Name</td>
-                <td>{{ $client->first_name }}</td>
-            <tr>
-                <td>Last Name</td>
-                <td>{{ $client->last_name }}</td>
+                <td>{{ $field }}</td>
+                <td>{{ $value }}</td>
             </tr>
-            <tr>
-                <td>Phone</td>
-                <td>{{ $client->phone }}</td>
-            <tr>
-                <td>Extension</td>
-                <td>{{ strlen($client->phone_ext) > 0 ? $client->phone_ext:"N/A" }}</td>
-            </tr>
-            <tr>
-                <td>Fax</td>
-                <td>{{ strlen($client->fax) > 0 ? $client->fax:"N/A" }}</td>
-            </tr>
-            <tr>
-                <td>Time Zone</td>
-                <td>{{ $client->time_zone }}</td>
-            </tr>
+           @endforeach
         </tbody>
         <tfoot>
             <tr>

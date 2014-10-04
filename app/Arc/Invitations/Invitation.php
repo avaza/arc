@@ -1,4 +1,6 @@
-<?php
+<?php namespace Arc\Invitations;
+
+use Eloquent;
 
 class Invitation extends \Eloquent
 {

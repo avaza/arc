@@ -1,5 +1,6 @@
 <?php
 
+//use Arc\Sessions\Session;
 class SessionsController extends \BaseController {
 
 	/**
@@ -22,11 +23,13 @@ class SessionsController extends \BaseController {
 	public function store()
 	{
         $credentials = [
-            'email' => Input::get('email'),
+            'identifier' => Input::get('email'),
             'password' => Input::get('password')
         ];
-        if(Auth::attempt($credentials)) return Redirect::to('invitations/create');
-        dd('problem');
+        if(Auth::attempt($credentials)){
+			return Redirect::intended('/')->withErrors([0 => "created session"]);
+		}
+		return Redirect::to('login')->withErrors([0 => "cant create session for some reason"]);
 	}
 
 	/**

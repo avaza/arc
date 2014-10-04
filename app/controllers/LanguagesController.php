@@ -1,5 +1,7 @@
 <?php
 
+use Arc\Languages\Language;
+
 class LanguagesController extends \BaseController {
 
 	/**

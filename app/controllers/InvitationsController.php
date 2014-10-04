@@ -1,7 +1,9 @@
 <?php
 
 use Arc\Validation\InvitationForm;
+use Arc\Invitations\Invitation;
 use Laracasts\Commander\CommandBus;
+
 class InvitationsController extends \BaseController {
 
     private $invitationForm;

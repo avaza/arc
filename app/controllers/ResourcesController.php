@@ -1,7 +1,9 @@
  <?php
 
  use Arc\Validation\ResourceForm;
+ use Arc\Resources\Resource;
  use Laracasts\Commander\CommandBus;
+
 class ResourcesController extends \BaseController {
 
     private $resourceForm;

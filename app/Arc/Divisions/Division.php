@@ -1,6 +1,8 @@
-<?php
+<?php namespace Arc\Divisions;
 
-class Division extends \Eloquent {
+use Eloquent;
+
+class Division extends Eloquent {
 	protected $fillable = [];
 
     public function client()

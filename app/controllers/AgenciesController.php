@@ -1,7 +1,9 @@
 <?php
 
 use Arc\Validation\AgencyForm;
+use Arc\Agencies\Agency;
 use Laracasts\Commander\CommandBus;
+
 class AgenciesController extends \BaseController {
 
     private $fields = ['active', 'client_id', 'agency_id', 'name', 'access_code', 'street_1', 'street_2', 'building', 'suite', 'city', 'county', 'state', 'zip'];

@@ -1,12 +1,16 @@
 <?php
 
+use Arc\Core\CommandBus;
+use Arc\Contracts\Contract;
 use Arc\Validation\ContractForm;
-use Laracasts\Commander\CommandBus;
-class ContractsController extends \BaseController {
+use Arc\Contracts\CreateContractCommand;
 
+class ContractsController extends BaseController {
+
+    use CommandBus;
     private $contractForm;
-    private $commandBus;
-    function __construct(CommandBus $commandBus, ContractForm $contractForm)
+
+    function __construct(ContractForm $contractForm)
     {
         $this->contractForm = $contractForm;
     }
@@ -20,6 +24,7 @@ class ContractsController extends \BaseController {
     public function index()
     {
         $contracts = Contract::all();
+
         return View::make('contracts.index', compact('contracts'));
     }
 
@@ -32,9 +37,11 @@ class ContractsController extends \BaseController {
     public function create()
     {
         $contract = new Contract;
-        foreach($this->contractForm->defaults as $field => $default){
+        foreach ($this->contractForm->defaults as $field => $default)
+        {
             $contract->$field = $default;
         }
+
         return View::make('contracts.create', compact('contract'));
     }
 
@@ -47,9 +54,11 @@ class ContractsController extends \BaseController {
     public function store()
     {
         $this->contractForm->validate(Input::all());
-        Contract::create(
-            Input::only($this->contractForm->fields)
+
+        $this->execute(
+            new CreateContractCommand(Input::only($this->contractForm->fields))
         );
+
         return Redirect::to('contracts');
     }
 
@@ -57,12 +66,13 @@ class ContractsController extends \BaseController {
      * Display the specified contract.
      * GET /contracts/{id}
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function show($id)
     {
         $contract = Contract::find($id);
+
         return View::make('contracts.show', compact('contract'));
     }
 
@@ -70,12 +80,13 @@ class ContractsController extends \BaseController {
      * Show the form for editing the specified contract.
      * GET /contracts/{id}/edit
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function edit($id)
     {
         $contract = Contract::find($id);
+
         return View::make('contracts.edit', compact('contract'));
     }
 
@@ -83,17 +94,19 @@ class ContractsController extends \BaseController {
      * Update the specified contract in storage.
      * PUT /contracts/{id}
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function update($id)
     {
         $this->contractForm->withRulesForUpdate($id)->validate(Input::all());
         $contract = Contract::find($id);
-        foreach($this->contractForm->fields as $field){
+        foreach ($this->contractForm->fields as $field)
+        {
             $contract->$field = Input::get($field);
         }
         $contract->save();
+
         return Redirect::to('contracts');
     }
 
@@ -101,7 +114,7 @@ class ContractsController extends \BaseController {
      * Remove the specified contract from storage.
      * DELETE /contracts/{id}
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function destroy($id)

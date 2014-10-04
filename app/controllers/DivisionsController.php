@@ -1,7 +1,9 @@
 <?php
 
 use Arc\Validation\DivisionForm;
+use Arc\Divisions\Division;
 use Laracasts\Commander\CommandBus;
+
 class DivisionsController extends \BaseController {
 
     private $fields = ['active', 'client_id', 'agency_id', 'name', 'access_code', 'street_1', 'street_2', 'building', 'suite', 'city', 'county', 'state', 'zip'];

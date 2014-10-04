@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Application & Route Filters
@@ -35,15 +36,16 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (! Auth::check())
+	if (!Auth::is('Super Admin'))
 	{
+		dd('this sucks');
 		if (Request::ajax())
 		{
 			return Response::make('Unauthorized', 401);
 		}
 		else
 		{
-			return Redirect::guest('login');
+			return Redirect::to('login')->withErrors([0 => 'blah']);
 		}
 	}
 });
@@ -88,3 +90,14 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+
+/*
+|--------------------------------------------------------------------------
+| Toddish/Verify exception Handlers
+|--------------------------------------------------------------------------
+|
+| Functions that check authentication with the Toddish/Verify Package
+|
+*/
+

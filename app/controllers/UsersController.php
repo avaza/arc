@@ -1,5 +1,7 @@
 <?php
 
+use Arc\Users\User;
+
 class UsersController extends \BaseController {
 
 	/**

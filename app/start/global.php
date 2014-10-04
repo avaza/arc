@@ -56,27 +56,27 @@ App::error(function(Laracasts\Validation\FormValidationException $exception, $co
     return Redirect::back()->withInput()->withErrors($exception->getErrors());
 });
 
-App::error(function(Toddish\Verify\UserNotFoundException $exception, $code)
+App::error(function(Toddish\Verify\UserNotFoundException $exception)
 {
     return Redirect::back()->withInput()->withErrors($exception->getMessage());
 });
 
-App::error(function(Toddish\Verify\UserUnverifiedException $exception, $code)
+App::error(function(Toddish\Verify\UserUnverifiedException $exception)
 {
     return Redirect::back()->withInput()->withErrors($exception->getMessage());
 });
 
-App::error(function(Toddish\Verify\UserDisabledException $exception, $code)
+App::error(function(Toddish\Verify\UserDisabledException $exception)
 {
     return Redirect::back()->withInput()->withErrors($exception->getMessage());
 });
 
-App::error(function(Toddish\Verify\UserDeletedException $exception, $code)
+App::error(function(Toddish\Verify\UserDeletedException $exception)
 {
     return Redirect::back()->withInput()->withErrors($exception->getMessage());
 });
 
-App::error(function(Toddish\Verify\UserPasswordIncorrectException $exception, $code)
+App::error(function(Toddish\Verify\UserPasswordIncorrectException $exception)
 {
     return Redirect::back()->withInput()->withErrors($exception->getMessage());
 });
@@ -108,5 +108,6 @@ App::down(function()
 |
 */
 
-require app_path().'/filters.php';
-require app_path().'/macros.php';
+require app_path() . '/filters.php';
+require app_path() . '/bs_macros.php';
+require app_path() . '/macros.php';

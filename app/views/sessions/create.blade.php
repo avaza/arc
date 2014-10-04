@@ -13,24 +13,9 @@
             </div>
         @endif
     {{ Form::open(['route' => 'sessions.store']) }}
-
-    <!-- Email Form Input -->
-    <div class="form-group">
-        {{ Form::label('email', 'Email:') }}
-        {{ Form::text('email', null, ['class' => 'form-control']) }}
-    </div>
-
-    <!-- Password Form Input -->
-    <div class="form-group">
-        {{ Form::label('password', 'Password:') }}
-        {{ Form::password('password', ['class' => 'form-control']) }}
-    </div>
-
-    <!-- Submit Button -->
-    <div class="form-group">
-        {{ Form::submit('Sign In', ['class' => 'btn btn-primary']) }}
-    </div>
-
+    {{ Form::passwordField('password', 'Password:') }}
+    {{ Form::password('password', ['class' => 'form-control']) }}
+    {{ Form::submitButton('Sign In') }}
     {{ Form::close() }}
 
 @stop

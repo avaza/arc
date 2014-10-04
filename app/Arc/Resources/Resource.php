@@ -1,4 +1,6 @@
-<?php
+<?php namespace Arc\Resources;
+
+use Eloquent;
 
 class Resource extends \Eloquent {
     protected $fillable = ['first_name', 'last_name', 'id_number', 'extension_num', 'extension_pin', 'primary_phone', 'secondary_phone', 'active', 'time_zone'];
@@ -10,7 +12,7 @@ class Resource extends \Eloquent {
 
     public function languages()
     {
-        return $this->morphToMany('Language', 'languagable');
+        return $this->morphToMany('Language', 'settable')->withPivot('language_set', 'otp_rate', 'otp_ahup', 'ons_rate', 'ons_ahup', 'vri_rate', 'vri_ahup', 'tsl_rate');
     }
 
     public function invitations()

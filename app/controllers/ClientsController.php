@@ -1,7 +1,9 @@
 <?php
 
 use Arc\Validation\clientForm;
+use Arc\Clients\Client;
 use Laracasts\Commander\CommandBus;
+
 class ClientsController extends \BaseController {
 
     private $clientForm;
@@ -9,6 +11,7 @@ class ClientsController extends \BaseController {
     function __construct(CommandBus $commandBus, clientForm $clientForm)
     {
         $this->clientForm = $clientForm;
+        $this->commandBus = $commandBus;
     }
     /**
      * Display a listing of the client.
@@ -41,6 +44,8 @@ class ClientsController extends \BaseController {
      */
     public function store()
     {
+        $command = new createContractCommand;
+        $this->commandBus->execute($command);
         $this->clientForm->validate(Input::all());
         $client = Client::create(
             Input::only('first_name', 'last_name', 'time_zone', 'phone', 'phone_ext', 'fax')

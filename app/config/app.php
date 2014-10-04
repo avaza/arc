@@ -124,6 +124,7 @@ return array(
         'Way\Generators\GeneratorsServiceProvider',
         'Laracasts\Commander\CommanderServiceProvider',
         'Laracasts\Validation\ValidationServiceProvider',
+		'Laracasts\Flash\FlashServiceProvider',
         'Toddish\Verify\VerifyServiceProvider'
 
 	),
@@ -191,7 +192,8 @@ return array(
 		'Str'               => 'Illuminate\Support\Str',
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
-		'View'              => 'Illuminate\Support\Facades\View'
+		'View'              => 'Illuminate\Support\Facades\View',
+		'Flash'             => 'Laracasts\Flash\Flash'
 
 	),
 

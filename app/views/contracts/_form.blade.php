@@ -1,3 +1,9 @@
+<!-- Client  Contact Select Input -->
+<div class="form-group">
+    {{ Form::label('client_id', 'Client Contact:') }}
+    {{ Form::select_db('client_id','Client', ['first_name', 'last_name'], null, ['class' => 'chosen-select'], 'Client Contact') }}
+</div>
+
 <!-- Account Number Form Input -->
 <div class="form-group">
     {{ Form::label('account_number', 'Account Number:') }}
@@ -19,13 +25,13 @@
 <!-- Contract Start Date Form Input -->
 <div class="form-group">
     {{ Form::label('start_date', 'Contract Start Date:') }}
-    {{ Form::text('start_date', null, ['class' => 'form-control']) }}
+    {{ Form::date('start_date', null, ['class' => 'form-control']) }}
 </div>
 
 <!-- Contract End Date Form Input -->
 <div class="form-group">
     {{ Form::label('end_date', 'Contract End Date:') }}
-    {{ Form::text('end_date', null, ['class' => 'form-control']) }}
+    {{ Form::date('end_date', null, ['class' => 'form-control']) }}
 </div>
 
 <!-- After Hours Start Time Form Input -->
@@ -43,7 +49,7 @@
 <!-- Weekends are "After Hours" Form Input -->
 <div class="form-group">
     {{ Form::label('ah_weekends', 'Weekends are "After Hours":') }}
-    {{ Form::text('ah_weekends', null, ['class' => 'form-control']) }}
+    {{ Form::check('ah_weekends', null, ['class' => 'form-control']) }}
 </div>
 
 <!-- OPI User Checkbox Input -->
@@ -74,4 +80,5 @@
 <div class="form-group">
     {{ Form::submit('Save Contract', ['class' => 'btn btn-primary']) }}
 </div>
+
 

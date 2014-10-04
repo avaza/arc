@@ -1,0 +1,130 @@
+Arc\Users\User:
+    email: $string@avaza.co
+    password: $string
+    salt: $string
+    verified:
+    disabled:
+    remember_token:
+    deleted_at: null
+    created_at: $date
+    updated_at: $date
+
+Toddish\Verify\Models\Role:
+    user_id:
+    role_id:
+    created_at: $date
+    updated_at: $date
+
+Toddish\Verify\Models\Permission:
+    permission_id:
+    role_id:
+    created_at: $date
+    updated_at: $date
+
+Arc\Contracts\Contract:
+    active: 1
+    client_id: $integer
+    name: $string
+    account_number: $integer
+    contract_number: $integer
+    current_po_number: $integer
+    expired_po_number_json: '{"JSON":"DATA"}'
+    start_date: $date
+    end_date: $date
+    ah_start: $time
+    ah_end: $time
+    ah_weekends: 1
+    otp_user: 1
+    ons_user: 0
+    vri_user: 0
+    tsl_user: 0
+    deleted_at: null
+    created_at: $date
+    updated_at: $date
+
+Arc\Resources\Resource:
+    id_number:
+    first_name:
+    last_name:
+    extension_num:
+    extension_pin:
+    primary_phone:
+    secondary_phone:
+    active:
+    time_zone:
+    inactive_reason:
+    status:
+    manager_id:
+    deleted_at: null
+    created_at: $date
+    updated_at: $date
+
+Arc\Clients\Client:
+    first_name:
+    last_name:
+    time_zone:
+    phone:
+    phone_ext:
+    fax:
+    manager_id:
+    personal_access_code:
+    last_request:
+    deleted_at: null
+    created_at: $date
+    updated_at: $date
+
+Arc\Agencies\Agency:
+    active:
+    client_id:
+    contract_id:
+    clientid:
+    name:
+    bill_to:
+    street_1:
+    street_2:
+    building:
+    suite:
+    city:
+    state:
+    zip:
+    special_invoice_json: '{"JSON":"DATA"}'
+    deleted_at: null
+    created_at: $date
+    updated_at: $date
+
+Arc\Divisions\Division:
+    active:
+    client_id:
+    agency_id:
+    name:
+    access_code:
+    street_1:
+    street_2:
+    building:
+    suite:
+    city:
+    county:
+    state:
+    zip:
+    otp_special_json: '{"JSON":"DATA"}'
+    ons_special_json: '{"JSON":"DATA"}'
+    vri_special_json: '{"JSON":"DATA"}'
+    tsl_special_json: '{"JSON":"DATA"}'
+    deleted_at: null
+    created_at: $date
+    updated_at: $date
+
+Arc\Languages\Language:
+    language:
+    iso_639_code:
+    deleted_at: null
+    created_at: $date
+    updated_at: $date
+
+Arc\Invitations\Invitation:
+    invitation_code:
+    email:
+    user_id:
+    registered:
+    created_at: $date
+    updated_at: $date

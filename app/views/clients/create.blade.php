@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h2>Add a Client</h2>
+    <h2>Add a Client Contact</h2>
     @if($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -13,7 +13,7 @@
         </div>
     @endif
 
-    {{ Form::open(['method' => 'post', 'route' => 'clients.store'])}}
+    {{ Form::open(['method' => 'post', 'route' => 'clients.store']) }}
     
         @include('clients._form')
 

@@ -16,11 +16,7 @@ class CreateLanguagesTable extends Migration {
 		{
 			$table->increments('id');
             $table->string('language')->unique();
-            $table->string('phonetic')->nullable();
-            $table->string('language_code')->unique();
-            $table->integer('default_set')->unsigned();
-            $table->string('country_of_origin')->nullable();
-            $table->string('alternate_languages')->nullable();
+            $table->string('iso_639_code')->unique();
             $table->softDeletes();
 			$table->timestamps();
 		});

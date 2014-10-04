@@ -15,7 +15,7 @@
         
         <p>There are no clients in the database!</p>
         <p><small>Add One Now!</small></p>
-        {{link_to('clients/create', 'Add client', ['class' => 'btn btn-primary'])}}
-    
+
     @endif
+    {{link_to('clients/create', 'Add client', ['class' => 'btn btn-primary'])}}
 @stop

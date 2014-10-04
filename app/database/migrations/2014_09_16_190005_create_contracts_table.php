@@ -29,25 +29,10 @@ class CreateContractsTable extends Migration {
             $table->time('ah_start')->default('20:00:00');
             $table->time('ah_end')->default('08:00:00');
             $table->boolean('ah_weekends')->default(1);
-            //OVER THE PHONE FEES
             $table->boolean('otp_user')->default(1);
-            $table->decimal('otp_ahup', 2, 2)->default(0.20);
-            $table->decimal('otp_cout', 2, 2)->default(0.50);
-            //ONSITE FEES
             $table->boolean('ons_user')->default(0);
-            $table->integer('ons_ahup')->default(20);
-            $table->integer('ons_rush')->default(20);
-            $table->integer('ons_cncl')->default(20);
-            //VRI FEES
             $table->boolean('vri_user')->default(0);
-            $table->decimal('vri_ahup', 2, 2)->default(0.50);
-            $table->decimal('vri_odup', 2, 2)->default(0.25);
-            $table->decimal('vri_cncl', 2, 2)->default(5.00);
-            //TRANSLATION FEES
             $table->boolean('tsl_user')->default(0);
-            $table->integer('tsl_rush')->default(50);
-            $table->integer('tsl_form')->default(25);
-            $table->integer('tsl_cncl')->default(25);
             $table->softDeletes();
 			$table->timestamps();
 		});

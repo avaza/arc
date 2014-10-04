@@ -1,6 +1,7 @@
-<?php
+<?php namespace Arc\Clients;
 
-class Client extends \Eloquent {
+use Eloquent;
+class Client extends Eloquent {
 	protected $fillable = ['first_name', 'last_name', 'time_zone', 'phone', 'phone_ext', 'fax'];
 
     public function user()
