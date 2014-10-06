@@ -10,7 +10,8 @@
 		"laracasts/validation": "1.1.*",
         "laracasts/flash": "~1.0",
 		"fzaninotto/faker": "v1.3.0",
-        "toddish/verify": "3.*"
+        "toddish/verify": "3.*",
+		"barryvdh/laravel-ide-helper": "1.*"
 	},
     "require-dev": {
         "way/generators": "~2.0",
@@ -21,7 +22,6 @@
 		"classmap": [
 			"app/commands",
 			"app/controllers",
-			"app/models",
 			"app/database/migrations",
 			"app/database/seeds"
 		],

@@ -108,6 +108,6 @@ App::down(function()
 |
 */
 
-require app_path() . '/filters.php';
-require app_path() . '/bs_macros.php';
-require app_path() . '/macros.php';
+require_once app_path() . '/filters.php';
+require_once app_path() . '/bs_macros.php';
+require_once app_path() . '/macros.php';

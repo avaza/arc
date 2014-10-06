@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => false,
+	'debug' => getenv('DEBUG_ON'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => getenv('ROOT_URL'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -125,7 +125,8 @@ return array(
         'Laracasts\Commander\CommanderServiceProvider',
         'Laracasts\Validation\ValidationServiceProvider',
 		'Laracasts\Flash\FlashServiceProvider',
-        'Toddish\Verify\VerifyServiceProvider'
+        'Toddish\Verify\VerifyServiceProvider',
+		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider'
 
 	),
 

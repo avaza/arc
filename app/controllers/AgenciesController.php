@@ -12,6 +12,7 @@ class AgenciesController extends \BaseController {
     function __construct(CommandBus $commandBus, AgencyForm $agencyForm)
     {
         $this->agencyForm = $agencyForm;
+        $this->commandBus = $commandBus;
     }
 
     /**
